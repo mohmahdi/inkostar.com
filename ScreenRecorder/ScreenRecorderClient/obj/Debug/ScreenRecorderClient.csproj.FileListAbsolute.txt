@@ -1,0 +1,10 @@
+C:\Development\inkostar\Source\ScreenRecorder\ScreenRecorderClient\bin\Debug\ScreenRecorderClient.exe
+C:\Development\inkostar\Source\ScreenRecorder\ScreenRecorderClient\bin\Debug\ScreenRecorderClient.pdb
+C:\Development\inkostar\Source\ScreenRecorder\ScreenRecorderClient\bin\Debug\ScreenRecorderLib.dll
+C:\Development\inkostar\Source\ScreenRecorder\ScreenRecorderClient\bin\Debug\ScreenRecorderLib.pdb
+C:\Development\inkostar\Source\ScreenRecorder\ScreenRecorderClient\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\inkostar\Source\ScreenRecorder\ScreenRecorderClient\obj\Debug\ScreenRecorderClient.Form1.resources
+C:\Development\inkostar\Source\ScreenRecorder\ScreenRecorderClient\obj\Debug\ScreenRecorderClient.Properties.Resources.resources
+C:\Development\inkostar\Source\ScreenRecorder\ScreenRecorderClient\obj\Debug\ScreenRecorderClient.csproj.GenerateResource.Cache
+C:\Development\inkostar\Source\ScreenRecorder\ScreenRecorderClient\obj\Debug\ScreenRecorderClient.exe
+C:\Development\inkostar\Source\ScreenRecorder\ScreenRecorderClient\obj\Debug\ScreenRecorderClient.pdb

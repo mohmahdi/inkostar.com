@@ -1,0 +1,2022 @@
+Assembly Interop.WMEncoderLib.1.0, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=SHA1, flags=None
+Interface WMEncoderLib.IWMEncSource: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    WMEncoderLib.WMENC_SOURCE_TYPE Type 'get ' : 
+    Boolean Repeat 'get set' : 
+    Int32 MarkIn 'get set' : 
+    Int32 MarkOut 'get set' : 
+    WMEncoderLib.IWMEncTransformCollection TransformCollection 'get ' : 
+    WMEncoderLib.IWMEncDataViewCollection PreviewCollection 'get ' : 
+    WMEncoderLib.IWMEncDataViewCollection PostviewCollection 'get ' : 
+  Methods:
+    get_Type(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    SetInput(String(In, HasFieldMarshal), String(In, Optional, HasDefault, HasFieldMarshal), String(In, Optional, HasDefault, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetInput(String&(Out, HasFieldMarshal), String&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    set_Repeat(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Repeat(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MarkIn(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_MarkIn(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MarkOut(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_MarkOut(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_TransformCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetTransformPluginCount(UInt32&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetTransformPlugin(UInt32(In), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_PreviewCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PostviewCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetSourcePlugin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Struct WMEncoderLib.WMENC_SOURCE_TYPE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_SOURCE_TYPE WMENC_AUDIO = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_SOURCE_TYPE WMENC_VIDEO = 2 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_SOURCE_TYPE WMENC_SCRIPT = 4 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_SOURCE_TYPE WMENC_FILETRANSFER = 8 : Public, Static, Literal, HasDefault
+Interface WMEncoderLib.IWMEncTransformCollection: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    System.Collections.IEnumerable
+  Properties:
+    Int32 length 'get ' : 
+    Int32 Count 'get ' : 
+  Methods:
+    get_length(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetEnumerator(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Item(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Add(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Remove(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RemoveAll(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Move(Int32(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMEncTransform: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Methods:
+    SetInput(String(In, HasFieldMarshal), String(In, Optional, HasDefault, HasFieldMarshal), String(In, Optional, HasDefault, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetInput(String&(Out, HasFieldMarshal), String&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetTransformPlugin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMEncDataViewCollection: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    Int32 length 'get ' : 
+    Int32 Count 'get ' : 
+  Methods:
+    get_length(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Item(Int32(In), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Add(Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Remove(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RemoveAll(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMEncVideoSource: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncSource
+  Properties:
+    WMEncoderLib.WMENC_SOURCE_TYPE Type 'get ' : 
+    Boolean Repeat 'get set' : 
+    Int32 MarkIn 'get set' : 
+    Int32 MarkOut 'get set' : 
+    WMEncoderLib.IWMEncTransformCollection TransformCollection 'get ' : 
+    WMEncoderLib.IWMEncDataViewCollection PreviewCollection 'get ' : 
+    WMEncoderLib.IWMEncDataViewCollection PostviewCollection 'get ' : 
+    WMEncoderLib.WMENC_CROPPING_MODE CroppingMode 'get set' : 
+    Int32 CroppingLeftMargin 'get set' : 
+    Int32 CroppingTopMargin 'get set' : 
+    Int32 CroppingRightMargin 'get set' : 
+    Int32 CroppingBottomMargin 'get set' : 
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION Optimization 'get set' : 
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO PixelFormat 'get set' : 
+  Methods:
+    get_Type(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    SetInput(String(In, HasFieldMarshal), String(In, Optional, HasDefault, HasFieldMarshal), String(In, Optional, HasDefault, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetInput(String&(Out, HasFieldMarshal), String&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    set_Repeat(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Repeat(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MarkIn(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_MarkIn(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MarkOut(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_MarkOut(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_TransformCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetTransformPluginCount(UInt32&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetTransformPlugin(UInt32(In), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_PreviewCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PostviewCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetSourcePlugin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_CroppingMode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_CroppingMode(WMENC_CROPPING_MODE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_CroppingLeftMargin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_CroppingLeftMargin(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_CroppingTopMargin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_CroppingTopMargin(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_CroppingRightMargin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_CroppingRightMargin(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_CroppingBottomMargin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_CroppingBottomMargin(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Optimization(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Optimization(WMENC_VIDEO_OPTIMIZATION(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PixelFormat(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_PixelFormat(WMENC_PIXELFORMAT_VIDEO(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Struct WMEncoderLib.WMENC_CROPPING_MODE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_CROPPING_MODE WMENC_CROPPING_ABSOLUTE = 0 : Public, Static, Literal, HasDefault
+Struct WMEncoderLib.WMENC_VIDEO_OPTIMIZATION: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_STANDARD = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_DEINTERLACE = 2 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_INVERSETELECINE = 3 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_PROCESS_INTERLACED = 4 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_TELECINE_AUTO = 16 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_TELECINE_AA_TOP = 32 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_TELECINE_BB_TOP = 48 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_TELECINE_BC_TOP = 64 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_TELECINE_CD_TOP = 80 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_TELECINE_DD_TOP = 96 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_TELECINE_AA_BOTTOM = 112 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_TELECINE_BB_BOTTOM = 128 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_TELECINE_BC_BOTTOM = 144 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_TELECINE_CD_BOTTOM = 160 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_TELECINE_DD_BOTTOM = 176 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_FLIPPING_VERTICAL = 256 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_INTERLACED_AUTO = 4096 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_INTERLACED_TOP_FIRST = 8192 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION WMENC_VIDEO_INTERLACED_BOTTOM_FIRST = 12288 : Public, Static, Literal, HasDefault
+Struct WMEncoderLib.WMENC_PIXELFORMAT_VIDEO: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO WMENC_PIXELFORMAT_AUTO = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO WMENC_PIXELFORMAT_IYUV = 1448433993 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO WMENC_PIXELFORMAT_I420 = 808596553 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO WMENC_PIXELFORMAT_YV12 = 842094169 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO WMENC_PIXELFORMAT_YUY2 = 844715353 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO WMENC_PIXELFORMAT_UYVY = 1498831189 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO WMENC_PIXELFORMAT_YVYU = 1431918169 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO WMENC_PIXELFORMAT_YVU9 = 961893977 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO WMENC_PIXELFORMAT_RGB24 = -466162819 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO WMENC_PIXELFORMAT_RGB32 = -466162818 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO WMENC_PIXELFORMAT_RGB555 = -466162820 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO WMENC_PIXELFORMAT_RGB565 = -466162821 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO WMENC_PIXELFORMAT_RGB8 = -466162822 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO WMENC_PIXELFORMAT_RGB4 = -466162823 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO WMENC_PIXELFORMAT_RGB1 = -466162824 : Public, Static, Literal, HasDefault
+Interface WMEncoderLib.IWMEncNetConnectionStats: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    Int32 ClientCount 'get ' : 
+    System.String ClientInfo [Int32, WMEncoderLib.WMENC_BROADCAST_PROTOCOL ByRef] 'get ' : 
+  Methods:
+    get_ClientCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ClientInfo(Int32(In), WMENC_BROADCAST_PROTOCOL&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Struct WMEncoderLib.WMENC_BROADCAST_PROTOCOL: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_BROADCAST_PROTOCOL WMENC_PROTOCOL_HTTP = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_BROADCAST_PROTOCOL WMENC_PROTOCOL_PUSH_DISTRIBUTION = 2 : Public, Static, Literal, HasDefault
+Interface WMEncoderLib.IWMEncOutputStats: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.Decimal SampleCount 'get ' : 
+    System.Decimal ByteCount 'get ' : 
+    System.Decimal DroppedSampleCount 'get ' : 
+    System.Decimal DroppedByteCount 'get ' : 
+    Int32 CurrentBitrate 'get ' : 
+    Int32 AverageBitrate 'get ' : 
+    Int32 ExpectedBitrate 'get ' : 
+    Int32 CurrentSampleRate 'get ' : 
+    Int32 AverageSampleRate 'get ' : 
+    Int32 ExpectedSampleRate 'get ' : 
+  Methods:
+    get_SampleCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ByteCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_DroppedSampleCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_DroppedByteCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_CurrentBitrate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AverageBitrate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ExpectedBitrate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_CurrentSampleRate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AverageSampleRate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ExpectedSampleRate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncFileArchiveStats: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.Decimal FileSize 'get ' : 
+    System.Decimal FileDuration 'get ' : 
+  Methods:
+    get_FileSize(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_FileDuration(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncIndexerStats: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    Int32 FileCount 'get ' : 
+    System.String FileName [Int32] 'get ' : 
+    Int32 PercentComplete 'get ' : 
+  Methods:
+    get_FileCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_FileName(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PercentComplete(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncPostViewCollection: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncDataViewCollection
+  Properties:
+    Int32 length 'get ' : 
+    Int32 Count 'get ' : 
+    Int32 ViewBandwidth 'get set' : 
+  Methods:
+    get_length(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Item(Int32(In), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Add(Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Remove(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RemoveAll(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_ViewBandwidth(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_ViewBandwidth(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncBroadcast: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    Int32 PortNumber [WMEncoderLib.WMENC_BROADCAST_PROTOCOL] 'get set' : 
+  Methods:
+    get_PortNumber(WMENC_BROADCAST_PROTOCOL(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_PortNumber(WMENC_BROADCAST_PROTOCOL(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncPushDistribution: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncBroadcast
+  Properties:
+    Int32 PortNumber [WMEncoderLib.WMENC_BROADCAST_PROTOCOL] 'get set' : 
+    System.String ServerName 'get set' : 
+    System.String PublishingPoint 'get set' : 
+    System.String Template 'get set' : 
+    Boolean AutoRemovePublishingPoint 'get set' : 
+  Methods:
+    get_PortNumber(WMENC_BROADCAST_PROTOCOL(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_PortNumber(WMENC_BROADCAST_PROTOCOL(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ServerName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_ServerName(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PublishingPoint(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_PublishingPoint(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Template(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Template(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AutoRemovePublishingPoint(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_AutoRemovePublishingPoint(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GenerateMulticastInfoFile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GenerateAnnouncementFile(String(In, HasFieldMarshal), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMEncoder: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    Boolean AutoStop 'get set' : 
+    Boolean EnableAutoArchive 'get set' : 
+    Int32 RecordingLevel [Int16] 'get set' : 
+    Boolean RecordingMute [Int16] 'get set' : 
+    WMEncoderLib.IWMEncSourceGroupCollection SourceGroupCollection 'get ' : 
+    WMEncoderLib.IWMEncSourcePluginInfoManager SourcePluginInfoManager 'get ' : 
+    WMEncoderLib.IWMEncTransformPluginInfoManager TransformPluginInfoManager 'get ' : 
+    WMEncoderLib.IWMEncDisplayInfo DisplayInfo 'get ' : 
+    WMEncoderLib.IWMEncAttributes Attributes 'get ' : 
+    WMEncoderLib.IWMEncBroadcast Broadcast 'get ' : 
+    WMEncoderLib.IWMEncFile File 'get ' : 
+    WMEncoderLib.IWMEncStatistics Statistics 'get ' : 
+    WMEncoderLib.IWMEncProfileCollection ProfileCollection 'get ' : 
+    WMEncoderLib.WMENC_ENCODER_STATE RunState 'get ' : 
+    Int32 ErrorState 'get ' : 
+    WMEncoderLib.WMENC_ARCHIVE_STATE ArchiveState [WMEncoderLib.WMENC_ARCHIVE_TYPE] 'get ' : 
+    System.String Name 'get set' : 
+    Boolean RemoteAdmin 'get set' : 
+    WMEncoderLib.WMENC_INDEXER_STATE IndexerState 'get ' : 
+    Boolean AutoIndex 'get set' : 
+  Methods:
+    set_Name(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_RemoteAdmin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_RemoteAdmin(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GenerateBroadcastInfo(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_IndexerState(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AutoIndex(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_AutoIndex(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Indexer(WMENC_INDEXER_OPERATION(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SetLocaleID(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Load(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Save(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Start(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Stop(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_AutoStop(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_AutoStop(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Pause(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    PrepareToEncode(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Reset(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Archive(WMENC_ARCHIVE_TYPE(In), WMENC_ARCHIVE_OPERATION(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SendScript(Int16(In), String(In, HasFieldMarshal), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_EnableAutoArchive(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_EnableAutoArchive(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_RecordingLevel(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_RecordingLevel(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_RecordingMute(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_RecordingMute(Int16(In), Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetAudioLevel(WMENC_AUDIOLEVEL_UNITS(In), Int16(In), Int32&(In, Out), Double&(Out), Double&(Out), Double&(Out), Double&(Out), Double&(Out), Double&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_SourceGroupCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_SourcePluginInfoManager(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_TransformPluginInfoManager(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_DisplayInfo(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Attributes(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Broadcast(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_File(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Statistics(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ProfileCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_RunState(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ErrorState(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ArchiveState(WMENC_ARCHIVE_TYPE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Name(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Struct WMEncoderLib.WMENC_ARCHIVE_TYPE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_ARCHIVE_TYPE WMENC_ARCHIVE_LOCAL = 1 : Public, Static, Literal, HasDefault
+Struct WMEncoderLib.WMENC_ARCHIVE_OPERATION: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_ARCHIVE_OPERATION WMENC_ARCHIVE_START = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_ARCHIVE_OPERATION WMENC_ARCHIVE_STOP = 2 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_ARCHIVE_OPERATION WMENC_ARCHIVE_PAUSE = 3 : Public, Static, Literal, HasDefault
+Struct WMEncoderLib.WMENC_AUDIOLEVEL_UNITS: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_AUDIOLEVEL_UNITS WMENC_AUDIOLEVEL_DB = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_AUDIOLEVEL_UNITS WMENC_AUDIOLEVEL_LINEAR = 2 : Public, Static, Literal, HasDefault
+Interface WMEncoderLib.IWMEncSourceGroupCollection: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    System.Collections.IEnumerable
+  Properties:
+    Int32 length 'get ' : 
+    Int32 Count 'get ' : 
+    WMEncoderLib.IWMEncSourceGroup Active 'get set' : 
+  Methods:
+    get_length(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetEnumerator(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Item(Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Add(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Remove(Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Move(IWMEncSourceGroup(In, HasFieldMarshal), IWMEncSourceGroup(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_Active(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Active(IWMEncSourceGroup(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncSourceGroup: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.String Name 'get set' : 
+    Int16 SourceCount [WMEncoderLib.WMENC_SOURCE_TYPE] 'get ' : 
+    WMEncoderLib.IWMEncSource Source [WMEncoderLib.WMENC_SOURCE_TYPE, Int16] 'get ' : 
+    WMEncoderLib.IWMEncProfile Profile 'get set' : 
+    System.Object AudienceCollection 'get ' : 
+    WMEncoderLib.WMENC_ARCHIVE_OPERATION AutoArchive [WMEncoderLib.WMENC_ARCHIVE_TYPE] 'get set' : 
+    WMEncoderLib.IWMEncTransformCollection GroupTransformCollection 'get ' : 
+  Methods:
+    get_Name(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Name(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_SourceCount(WMENC_SOURCE_TYPE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Source(WMENC_SOURCE_TYPE(In), Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    AddSource(WMENC_SOURCE_TYPE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RemoveSource(WMENC_SOURCE_TYPE(In), Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_Profile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Profile(Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AudienceCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AutoArchive(WMENC_ARCHIVE_TYPE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_AutoArchive(WMENC_ARCHIVE_TYPE(In), WMENC_ARCHIVE_OPERATION(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    AutoSetFileSource(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    PrepareToEncode(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_GroupTransformCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetGroupTransformPluginCount(UInt32&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetGroupTransformPlugin(UInt32(In), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMEncProfile: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.String Name 'get ' : 
+    System.String Description 'get ' : 
+    Int16 MediaCount [WMEncoderLib.WMENC_SOURCE_TYPE] 'get ' : 
+    Boolean MultipleBitrate 'get ' : 
+    System.Object AudienceCollection 'get ' : 
+    Int32 MaxPacketSize 'get set' : 
+  Methods:
+    get_Name(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Description(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MediaCount(WMENC_SOURCE_TYPE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MultipleBitrate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AudienceCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MaxPacketSize(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_MaxPacketSize(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncSourcePluginInfoManager: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    System.Collections.IEnumerable
+  Properties:
+    Int32 length 'get ' : 
+    Int32 Count 'get ' : 
+  Methods:
+    get_length(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetEnumerator(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Item(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Refresh(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMEncPluginInfo: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.String SchemeType 'get ' : 
+    System.String CLSID 'get ' : 
+    System.String Name 'get ' : 
+    WMEncoderLib.WMENC_SOURCE_TYPE MediaType 'get ' : 
+    WMEncoderLib.WMENC_PLUGIN_TYPE PluginType 'get ' : 
+    System.String Copyright 'get ' : 
+    System.String InfoURL 'get ' : 
+    Boolean Resources 'get ' : 
+    Boolean Exclusive 'get ' : 
+    Boolean PropertyPage 'get ' : 
+    Int16 TransformFlags 'get ' : 
+    Boolean Hidden 'get ' : 
+    Int32 Count 'get ' : 
+  Methods:
+    get_SchemeType(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_CLSID(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Name(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MediaType(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PluginType(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Copyright(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_InfoURL(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Resources(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Exclusive(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PropertyPage(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_TransformFlags(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Hidden(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Item(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Struct WMEncoderLib.WMENC_PLUGIN_TYPE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_PLUGIN_TYPE WMENC_PLUGIN_SOURCE = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PLUGIN_TYPE WMENC_PLUGIN_TRANSFORM = 2 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PLUGIN_TYPE WMENC_PLUGIN_DEVICECONTROL = 3 : Public, Static, Literal, HasDefault
+Interface WMEncoderLib.IWMEncTransformPluginInfoManager: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    System.Collections.IEnumerable
+  Properties:
+    Int32 length 'get ' : 
+    Int32 Count 'get ' : 
+  Methods:
+    get_length(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetEnumerator(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Item(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Refresh(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMEncDisplayInfo: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.String Title 'get set' : 
+    System.String Author 'get set' : 
+    System.String Copyright 'get set' : 
+    System.String Rating 'get set' : 
+    System.String Description 'get set' : 
+  Methods:
+    get_Title(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Title(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Author(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Author(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Copyright(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Copyright(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Rating(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Rating(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Description(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Description(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncAttributes: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    Int32 Count 'get ' : 
+  Methods:
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Item(Int32(In), String&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Add(String(In, HasFieldMarshal), Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Remove(Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RemoveAll(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMEncFile: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.String LocalFileName 'get set' : 
+    System.String RemoteFileName 'get set' : 
+  Methods:
+    get_LocalFileName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_LocalFileName(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_RemoteFileName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_RemoteFileName(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncStatistics: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.Decimal EncodingTime 'get ' : 
+    System.Object WMFOutputStats 'get ' : 
+    System.Object StreamOutputStats [WMEncoderLib.WMENC_SOURCE_TYPE, Int16, Int16] 'get ' : 
+    System.Object NetConnectionStats 'get ' : 
+    System.Object FileArchiveStats 'get ' : 
+    Int16 StreamOutputCount [WMEncoderLib.WMENC_SOURCE_TYPE, Int16] 'get ' : 
+    System.Object IndexerStats 'get ' : 
+  Methods:
+    get_EncodingTime(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_WMFOutputStats(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_StreamOutputStats(WMENC_SOURCE_TYPE(In), Int16(In), Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_NetConnectionStats(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_FileArchiveStats(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_StreamOutputCount(WMENC_SOURCE_TYPE(In), Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_IndexerStats(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncProfileCollection: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    System.Collections.IEnumerable
+  Properties:
+    Int32 length 'get ' : 
+    Int32 Count 'get ' : 
+    System.String ProfileDirectory 'get set' : 
+  Methods:
+    get_length(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ProfileDirectory(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_ProfileDirectory(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetEnumerator(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Item(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Refresh(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Struct WMEncoderLib.WMENC_ENCODER_STATE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_ENCODER_STATE WMENC_ENCODER_STARTING = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_ENCODER_STATE WMENC_ENCODER_RUNNING = 2 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_ENCODER_STATE WMENC_ENCODER_PAUSED = 3 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_ENCODER_STATE WMENC_ENCODER_STOPPING = 4 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_ENCODER_STATE WMENC_ENCODER_STOPPED = 5 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_ENCODER_STATE WMENC_ENCODER_END_PREPROCESS = 6 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_ENCODER_STATE WMENC_ENCODER_PAUSING = 7 : Public, Static, Literal, HasDefault
+Struct WMEncoderLib.WMENC_ARCHIVE_STATE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_ARCHIVE_STATE WMENC_ARCHIVE_RUNNING = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_ARCHIVE_STATE WMENC_ARCHIVE_PAUSED = 2 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_ARCHIVE_STATE WMENC_ARCHIVE_STOPPED = 3 : Public, Static, Literal, HasDefault
+Struct WMEncoderLib.WMENC_INDEXER_STATE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_INDEXER_STATE WMENC_INDEXER_RUNNING = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_INDEXER_STATE WMENC_INDEXER_STOPPED = 2 : Public, Static, Literal, HasDefault
+Struct WMEncoderLib.WMENC_INDEXER_OPERATION: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_INDEXER_OPERATION WMENC_INDEXER_STOP = 1 : Public, Static, Literal, HasDefault
+Interface WMEncoderLib.IWMEncoder2: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncoder
+  Properties:
+    Boolean AutoStop 'get set' : 
+    Boolean EnableAutoArchive 'get set' : 
+    Int32 RecordingLevel [Int16] 'get set' : 
+    Boolean RecordingMute [Int16] 'get set' : 
+    WMEncoderLib.IWMEncSourceGroupCollection SourceGroupCollection 'get ' : 
+    WMEncoderLib.IWMEncSourcePluginInfoManager SourcePluginInfoManager 'get ' : 
+    WMEncoderLib.IWMEncTransformPluginInfoManager TransformPluginInfoManager 'get ' : 
+    WMEncoderLib.IWMEncDisplayInfo DisplayInfo 'get ' : 
+    WMEncoderLib.IWMEncAttributes Attributes 'get ' : 
+    WMEncoderLib.IWMEncBroadcast Broadcast 'get ' : 
+    WMEncoderLib.IWMEncFile File 'get ' : 
+    WMEncoderLib.IWMEncStatistics Statistics 'get ' : 
+    WMEncoderLib.IWMEncProfileCollection ProfileCollection 'get ' : 
+    WMEncoderLib.WMENC_ENCODER_STATE RunState 'get ' : 
+    Int32 ErrorState 'get ' : 
+    WMEncoderLib.WMENC_ARCHIVE_STATE ArchiveState [WMEncoderLib.WMENC_ARCHIVE_TYPE] 'get ' : 
+    System.String Name 'get set' : 
+    Boolean RemoteAdmin 'get set' : 
+    WMEncoderLib.WMENC_INDEXER_STATE IndexerState 'get ' : 
+    Boolean AutoIndex 'get set' : 
+    WMEncoderLib.IWMEncDeviceControlPluginInfoManager DeviceControlPluginInfoManager 'get ' : 
+    WMEncoderLib.IWMEncContentAnalyzer ContentAnalyzer 'get ' : 
+    Boolean SynchronizeOperation 'get set' : 
+    WMEncoderLib.IWMDRMContentAuthor EncoderDRMContentAuthor 'get ' : 
+    WMEncoderLib.IWMEncWatermarkCollection WatermarkCollection [WMEncoderLib.WMENC_SOURCE_TYPE] 'get ' : 
+    Boolean EnableTimecode 'get set' : 
+    Boolean PreserveSourceTimecode 'get set' : 
+    Int32 StartingTimecode 'get set' : 
+    Int32 TimecodeFrameRate 'get set' : 
+    WMEncoderLib.WMENC_VIDEOCOMPLEXITY VideoComplexity 'get set' : 
+  Methods:
+    set_Name(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_RemoteAdmin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_RemoteAdmin(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GenerateBroadcastInfo(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_IndexerState(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AutoIndex(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_AutoIndex(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Indexer(WMENC_INDEXER_OPERATION(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_DeviceControlPluginInfoManager(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ContentAnalyzer(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    InsertCleanpoint(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_SynchronizeOperation(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_SynchronizeOperation(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_EncoderDRMContentAuthor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_WatermarkCollection(WMENC_SOURCE_TYPE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetWatermark(WMENC_SOURCE_TYPE(In), Int16(In), Object&(Out, HasFieldMarshal), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SetWatermark(WMENC_SOURCE_TYPE(In), Int16(In), String(In, HasFieldMarshal), String(In, HasFieldMarshal), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Flush(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_EnableTimecode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_EnableTimecode(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PreserveSourceTimecode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_PreserveSourceTimecode(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_StartingTimecode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_StartingTimecode(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_TimecodeFrameRate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_TimecodeFrameRate(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_VideoComplexity(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_VideoComplexity(WMENC_VIDEOCOMPLEXITY(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    SetLocaleID(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Load(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Save(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Start(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Stop(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_AutoStop(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_AutoStop(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Pause(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    PrepareToEncode(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Reset(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Archive(WMENC_ARCHIVE_TYPE(In), WMENC_ARCHIVE_OPERATION(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SendScript(Int16(In), String(In, HasFieldMarshal), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_EnableAutoArchive(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_EnableAutoArchive(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_RecordingLevel(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_RecordingLevel(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_RecordingMute(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_RecordingMute(Int16(In), Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetAudioLevel(WMENC_AUDIOLEVEL_UNITS(In), Int16(In), Int32&(In, Out), Double&(Out), Double&(Out), Double&(Out), Double&(Out), Double&(Out), Double&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_SourceGroupCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_SourcePluginInfoManager(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_TransformPluginInfoManager(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_DisplayInfo(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Attributes(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Broadcast(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_File(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Statistics(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ProfileCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_RunState(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ErrorState(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ArchiveState(WMENC_ARCHIVE_TYPE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Name(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncDeviceControlPluginInfoManager: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    System.Collections.IEnumerable
+  Properties:
+    Int32 length 'get ' : 
+    Int32 Count 'get ' : 
+  Methods:
+    get_length(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetEnumerator(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Item(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Refresh(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMEncContentAnalyzer: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    WMEncoderLib.IWMEncSourceGroup SourceGroup 'get set' : 
+  Methods:
+    get_SourceGroup(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_SourceGroup(IWMEncSourceGroup(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Start(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Stop(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Property(WMENC_SOURCE_TYPE(In), Int16(In), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMDRMContentAuthor: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.String ContentID 'get set' : 
+    WMEncoderLib.IWMDRMAttributes Attributes 'get ' : 
+    WMEncoderLib.IWMDRMProfileCollection DRMProfileCollection 'get ' : 
+  Methods:
+    SetSessionDRMProfile(String(In, HasFieldMarshal), Object&(In, Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetSessionDRMProfile(Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_ContentID(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_ContentID(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Attributes(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    CreateDRMProfile(String(In, HasFieldMarshal), String(In, HasFieldMarshal), String(In, HasFieldMarshal), String(In, HasFieldMarshal), String(In, HasFieldMarshal), Object&(Out, HasFieldMarshal), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetDRMProfile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RemoveDRMProfile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    ImportDRMProfile(String(In, HasFieldMarshal), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    ExportDRMProfile(String(In, HasFieldMarshal), String(In, HasFieldMarshal), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GenerateKeyID(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GenerateContentID(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_DRMProfileCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMDRMAttributes: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    Int32 Count 'get ' : 
+    System.String Name [Int32] 'get ' : 
+    System.Object Value [System.Object] 'get ' : 
+  Methods:
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Item(Int32(In), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_Name(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Value(Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Add(String(In, HasFieldMarshal), Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Remove(Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RemoveAll(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMDRMProfile: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.String ID 'get ' : 
+    System.String ProviderURL 'get ' : 
+    System.String Name 'get set' : 
+    System.String Description 'get set' : 
+    System.String LicenseAcquisitionURL 'get set' : 
+    System.String V1LicenseAcquisitionURL 'get set' : 
+    WMEncoderLib.IWMDRMAttributes Attributes 'get ' : 
+    System.String ContentRevocation 'get ' : 
+  Methods:
+    get_ID(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ProviderURL(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Name(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Name(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Description(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Description(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_LicenseAcquisitionURL(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_LicenseAcquisitionURL(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_V1LicenseAcquisitionURL(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_V1LicenseAcquisitionURL(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Attributes(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Update(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_ContentRevocation(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMDRMProfileCollection: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    System.Collections.IEnumerable
+  Properties:
+    Int32 length 'get ' : 
+    Int32 Count 'get ' : 
+  Methods:
+    get_length(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetEnumerator(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Item(Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMEncWatermarkCollection: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    Int32 length 'get ' : 
+    Int32 Count 'get ' : 
+  Methods:
+    get_length(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Item(Int32(In), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Struct WMEncoderLib.WMENC_VIDEOCOMPLEXITY: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_VIDEOCOMPLEXITY WMENC_DEFAULT_COMPLEXITY = -1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEOCOMPLEXITY WMENC_COMPLEXITY_LEVEL0 = 0 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEOCOMPLEXITY WMENC_COMPLEXITY_LEVEL20 = 20 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEOCOMPLEXITY WMENC_COMPLEXITY_LEVEL40 = 40 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEOCOMPLEXITY WMENC_COMPLEXITY_LEVEL50 = 50 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEOCOMPLEXITY WMENC_COMPLEXITY_LEVEL60 = 60 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEOCOMPLEXITY WMENC_COMPLEXITY_LEVEL80 = 80 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_VIDEOCOMPLEXITY WMENC_COMPLEXITY_LEVEL100 = 100 : Public, Static, Literal, HasDefault
+Interface WMEncoderLib.IWMEncFile2: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncFile
+  Properties:
+    System.String LocalFileName 'get set' : 
+    System.String RemoteFileName 'get set' : 
+    System.Decimal FileDuration 'get set' : 
+    System.Decimal FileSize 'get set' : 
+  Methods:
+    get_LocalFileName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_LocalFileName(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_RemoteFileName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_RemoteFileName(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_FileDuration(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_FileDuration(Decimal(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_FileSize(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_FileSize(Decimal(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncSourceGroup2: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncSourceGroup
+  Properties:
+    System.String Name 'get set' : 
+    Int16 SourceCount [WMEncoderLib.WMENC_SOURCE_TYPE] 'get ' : 
+    WMEncoderLib.IWMEncSource Source [WMEncoderLib.WMENC_SOURCE_TYPE, Int16] 'get ' : 
+    WMEncoderLib.IWMEncProfile Profile 'get set' : 
+    System.Object AudienceCollection 'get ' : 
+    WMEncoderLib.WMENC_ARCHIVE_OPERATION AutoArchive [WMEncoderLib.WMENC_ARCHIVE_TYPE] 'get set' : 
+    WMEncoderLib.IWMEncTransformCollection GroupTransformCollection 'get ' : 
+    WMEncoderLib.IWMEncDeviceControlCollection DeviceControlCollection 'get ' : 
+  Methods:
+    get_Name(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Name(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_SourceCount(WMENC_SOURCE_TYPE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Source(WMENC_SOURCE_TYPE(In), Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    AddSource(WMENC_SOURCE_TYPE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RemoveSource(WMENC_SOURCE_TYPE(In), Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_Profile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Profile(Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AudienceCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AutoArchive(WMENC_ARCHIVE_TYPE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_AutoArchive(WMENC_ARCHIVE_TYPE(In), WMENC_ARCHIVE_OPERATION(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    AutoSetFileSource(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    PrepareToEncode(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_GroupTransformCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetGroupTransformPluginCount(UInt32&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetGroupTransformPlugin(UInt32(In), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_DeviceControlCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetAutoRollover(Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SetAutoRollover(Int32(In), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMEncDeviceControlCollection: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    System.Collections.IEnumerable
+  Properties:
+    Int32 length 'get ' : 
+    Int32 Count 'get ' : 
+  Methods:
+    get_length(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetEnumerator(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Item(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Add(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Remove(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RemoveAll(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMEncDeviceControl: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Methods:
+    SetInput(String(In, HasFieldMarshal), String(In, Optional, HasDefault, HasFieldMarshal), String(In, Optional, HasDefault, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetInput(Object&(Out, HasFieldMarshal), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetDeviceControlPlugin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMEncOutputStats2: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncOutputStats
+  Properties:
+    System.Decimal SampleCount 'get ' : 
+    System.Decimal ByteCount 'get ' : 
+    System.Decimal DroppedSampleCount 'get ' : 
+    System.Decimal DroppedByteCount 'get ' : 
+    Int32 CurrentBitrate 'get ' : 
+    Int32 AverageBitrate 'get ' : 
+    Int32 ExpectedBitrate 'get ' : 
+    Int32 CurrentSampleRate 'get ' : 
+    Int32 AverageSampleRate 'get ' : 
+    Int32 ExpectedSampleRate 'get ' : 
+    System.Object Property [System.String] 'get ' : 
+  Methods:
+    get_SampleCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ByteCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_DroppedSampleCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_DroppedByteCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_CurrentBitrate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AverageBitrate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ExpectedBitrate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_CurrentSampleRate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AverageSampleRate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ExpectedSampleRate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Property(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncVideoSource2: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncVideoSource
+    WMEncoderLib.IWMEncSource
+  Properties:
+    WMEncoderLib.WMENC_SOURCE_TYPE Type 'get ' : 
+    Boolean Repeat 'get set' : 
+    Int32 MarkIn 'get set' : 
+    Int32 MarkOut 'get set' : 
+    WMEncoderLib.IWMEncTransformCollection TransformCollection 'get ' : 
+    WMEncoderLib.IWMEncDataViewCollection PreviewCollection 'get ' : 
+    WMEncoderLib.IWMEncDataViewCollection PostviewCollection 'get ' : 
+    WMEncoderLib.WMENC_CROPPING_MODE CroppingMode 'get set' : 
+    Int32 CroppingLeftMargin 'get set' : 
+    Int32 CroppingTopMargin 'get set' : 
+    Int32 CroppingRightMargin 'get set' : 
+    Int32 CroppingBottomMargin 'get set' : 
+    WMEncoderLib.WMENC_VIDEO_OPTIMIZATION Optimization 'get set' : 
+    WMEncoderLib.WMENC_PIXELFORMAT_VIDEO PixelFormat 'get set' : 
+    Int32 Width 'get set' : 
+    Int32 Height 'get set' : 
+    Int16 PixelAspectRatioX 'get set' : 
+    Int16 PixelAspectRatioY 'get set' : 
+    Int16 PreProcessPass 'get set' : 
+    Int16 Input 'get set' : 
+    Int16 Channel 'get set' : 
+    Int32 Country 'get set' : 
+    Int16 TVType 'get set' : 
+    Int32 TVFormat 'get set' : 
+    Int32 ChannelMin 'get ' : 
+    Int32 ChannelMax 'get ' : 
+    Int32 Duration 'get ' : 
+  Methods:
+    set_Height(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PixelAspectRatioX(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_PixelAspectRatioX(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PixelAspectRatioY(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_PixelAspectRatioY(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PreProcessPass(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_PreProcessPass(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    EnumerateInputs(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    set_Input(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Channel(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Country(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_TVType(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_TVFormat(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Input(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Channel(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Country(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_TVType(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_TVFormat(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ChannelMin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ChannelMax(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Duration(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Type(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    SetInput(String(In, HasFieldMarshal), String(In, Optional, HasDefault, HasFieldMarshal), String(In, Optional, HasDefault, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetInput(String&(Out, HasFieldMarshal), String&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    set_Repeat(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Repeat(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MarkIn(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_MarkIn(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MarkOut(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_MarkOut(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_TransformCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetTransformPluginCount(UInt32&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetTransformPlugin(UInt32(In), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_PreviewCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PostviewCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetSourcePlugin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_CroppingMode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_CroppingMode(WMENC_CROPPING_MODE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_CroppingLeftMargin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_CroppingLeftMargin(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_CroppingTopMargin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_CroppingTopMargin(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_CroppingRightMargin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_CroppingRightMargin(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_CroppingBottomMargin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_CroppingBottomMargin(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Optimization(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Optimization(WMENC_VIDEO_OPTIMIZATION(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PixelFormat(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_PixelFormat(WMENC_PIXELFORMAT_VIDEO(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Width(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Width(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Height(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncInputCollection: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    System.Collections.IEnumerable
+  Properties:
+    Int32 length 'get ' : 
+    Int32 Count 'get ' : 
+  Methods:
+    Item(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_length(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetEnumerator(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface WMEncoderLib.IWMEncAudioSource: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncSource
+  Properties:
+    WMEncoderLib.WMENC_SOURCE_TYPE Type 'get ' : 
+    Boolean Repeat 'get set' : 
+    Int32 MarkIn 'get set' : 
+    Int32 MarkOut 'get set' : 
+    WMEncoderLib.IWMEncTransformCollection TransformCollection 'get ' : 
+    WMEncoderLib.IWMEncDataViewCollection PreviewCollection 'get ' : 
+    WMEncoderLib.IWMEncDataViewCollection PostviewCollection 'get ' : 
+    WMEncoderLib.WMENC_CONTENT_MODE ContentMode 'get set' : 
+    System.String ContentEDL 'get set' : 
+    Int16 PreProcessPass 'get set' : 
+    Int32 Duration 'get ' : 
+  Methods:
+    get_Type(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    SetInput(String(In, HasFieldMarshal), String(In, Optional, HasDefault, HasFieldMarshal), String(In, Optional, HasDefault, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetInput(String&(Out, HasFieldMarshal), String&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    set_Repeat(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Repeat(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MarkIn(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_MarkIn(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MarkOut(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_MarkOut(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_TransformCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetTransformPluginCount(UInt32&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetTransformPlugin(UInt32(In), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_PreviewCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PostviewCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetSourcePlugin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_ContentMode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_ContentMode(WMENC_CONTENT_MODE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ContentEDL(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_ContentEDL(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PreProcessPass(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_PreProcessPass(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Duration(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Struct WMEncoderLib.WMENC_CONTENT_MODE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_CONTENT_MODE WMENC_AUDIOCONTENT_NO_MODE = 0 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_CONTENT_MODE WMENC_AUDIOCONTENT_SPEECH_MODE = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_CONTENT_MODE WMENC_AUDIOCONTENT_MIXED_MODE = 2 : Public, Static, Literal, HasDefault
+Interface WMEncoderLib.IWMEncPushDistributionStats: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.Object Property [System.String] 'get ' : 
+  Methods:
+    get_Property(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncStatistics2: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncStatistics
+  Properties:
+    System.Decimal EncodingTime 'get ' : 
+    System.Object WMFOutputStats 'get ' : 
+    System.Object StreamOutputStats [WMEncoderLib.WMENC_SOURCE_TYPE, Int16, Int16] 'get ' : 
+    System.Object NetConnectionStats 'get ' : 
+    System.Object FileArchiveStats 'get ' : 
+    Int16 StreamOutputCount [WMEncoderLib.WMENC_SOURCE_TYPE, Int16] 'get ' : 
+    System.Object IndexerStats 'get ' : 
+    System.Object PushDistributionStats 'get ' : 
+  Methods:
+    get_EncodingTime(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_WMFOutputStats(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_StreamOutputStats(WMENC_SOURCE_TYPE(In), Int16(In), Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_NetConnectionStats(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_FileArchiveStats(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_StreamOutputCount(WMENC_SOURCE_TYPE(In), Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_IndexerStats(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_PushDistributionStats(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncAudienceObj: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    Boolean Selected 'get set' : 
+    Int32 TotalBitrate 'get ' : 
+    Int32 TotalPeakBitrate 'get ' : 
+    Int32 AudioCodec [Int16] 'get set' : 
+    Int32 AudioBitrate [Int16] 'get ' : 
+    Int32 AudioFormat [Int16] 'get set' : 
+    Int32 AudioPeakBitrate [Int16] 'get set' : 
+    Int32 AudioBufferMax [Int16] 'get set' : 
+    Int32 VideoCodec [Int16] 'get set' : 
+    Int32 VideoBitrate [Int16] 'get set' : 
+    Int32 VideoPeakBitrate [Int16] 'get set' : 
+    Int32 VideoWidth [Int16] 'get set' : 
+    Int32 VideoHeight [Int16] 'get set' : 
+    Int32 VideoFPS [Int16] 'get set' : 
+    System.Decimal VideoKeyFrameDistance [Int16] 'get set' : 
+    Int32 VideoImageSharpness [Int16] 'get set' : 
+    Int32 VideoCompressionQuality [Int16] 'get set' : 
+    Int32 VideoBufferSize [Int16] 'get set' : 
+    Int32 VideoBufferMax [Int16] 'get set' : 
+    Int32 ScriptBitrate [Int16] 'get set' : 
+    Int32 StreamBitrate [WMEncoderLib.WMENC_SOURCE_TYPE, Int16] 'get set' : 
+    System.Object Property [WMEncoderLib.WMENC_SOURCE_TYPE, Int16, System.String] 'get set' : 
+  Methods:
+    get_VideoBufferSize(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_VideoBufferSize(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_VideoBufferMax(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_VideoBufferMax(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ScriptBitrate(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_ScriptBitrate(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_StreamBitrate(WMENC_SOURCE_TYPE(In), Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_StreamBitrate(WMENC_SOURCE_TYPE(In), Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Property(WMENC_SOURCE_TYPE(In), Int16(In), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Property(WMENC_SOURCE_TYPE(In), Int16(In), String(In, HasFieldMarshal), Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Selected(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Selected(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_TotalBitrate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_TotalPeakBitrate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AudioCodec(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_AudioCodec(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AudioBitrate(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AudioFormat(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_AudioFormat(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    SetAudioConfig(Int16(In), Int16(In), Int32(In), Int32(In), Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_AudioPeakBitrate(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_AudioPeakBitrate(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AudioBufferMax(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_AudioBufferMax(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_VideoCodec(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_VideoCodec(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_VideoBitrate(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_VideoBitrate(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_VideoPeakBitrate(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_VideoPeakBitrate(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_VideoWidth(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_VideoWidth(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_VideoHeight(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_VideoHeight(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_VideoFPS(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_VideoFPS(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_VideoKeyFrameDistance(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_VideoKeyFrameDistance(Int16(In), Decimal(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_VideoImageSharpness(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_VideoImageSharpness(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_VideoCompressionQuality(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_VideoCompressionQuality(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncFileSet: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    Int32 Count 'get ' : 
+    System.Decimal Time 'get set' : 
+  Methods:
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Item(Int32(In), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Add(String(In, HasFieldMarshal), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Remove(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RemoveAll(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Move(Int32(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SetInput(Int32(In), String(In, HasFieldMarshal), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_Time(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Time(Decimal(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncFileTransferSource: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    Int32 Count 'get ' : 
+    Boolean UserDrivenMode 'get set' : 
+    WMEncoderLib.WMENC_SOURCE_STATE State 'get ' : 
+    WMEncoderLib.IWMEncFileSet Active 'get ' : 
+  Methods:
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Item(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Add(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Remove(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RemoveAll(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Move(Int32(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_UserDrivenMode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_UserDrivenMode(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Send(IWMEncFileSet(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Abort(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_State(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Active(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Struct WMEncoderLib.WMENC_SOURCE_STATE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_SOURCE_STATE WMENC_SOURCE_START = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_SOURCE_STATE WMENC_SOURCE_STOP = 2 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_SOURCE_STATE WMENC_SOURCE_PREPARE = 3 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_SOURCE_STATE WMENC_SOURCE_UNPREPARE = 4 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_SOURCE_STATE WMENC_START_FILETRANSFER = 5 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_SOURCE_STATE WMENC_STOP_FILETRANSFER = 6 : Public, Static, Literal, HasDefault
+Interface WMEncoderLib.IWMEncNetConnectionStats2: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncNetConnectionStats
+  Properties:
+    Int32 ClientCount 'get ' : 
+    System.String ClientInfo [Int32, WMEncoderLib.WMENC_BROADCAST_PROTOCOL ByRef] 'get ' : 
+    System.String HostURL 'get ' : 
+  Methods:
+    get_ClientCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ClientInfo(Int32(In), WMENC_BROADCAST_PROTOCOL&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_HostURL(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib._IWMEncoderEvents: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Methods:
+    OnStateChange(WMENC_ENCODER_STATE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    OnError(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    OnArchiveStateChange(WMENC_ARCHIVE_TYPE(In), WMENC_ARCHIVE_STATE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    OnConfigChange(Int32(In), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    OnClientConnect(WMENC_BROADCAST_PROTOCOL(In), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    OnClientDisconnect(WMENC_BROADCAST_PROTOCOL(In), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    OnSourceStateChange(WMENC_SOURCE_STATE(In), WMENC_SOURCE_TYPE(In), Int16(In), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    OnDeviceControlStateChange(WMENC_DEVICECONTROL_STATE(In), String(In, HasFieldMarshal), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    OnIndexerStateChange(WMENC_INDEXER_STATE(In), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    OnAcquireCredentials(String(In, HasFieldMarshal), String(In, HasFieldMarshal), Object&(In, Out, HasFieldMarshal), Object&(In, Out, HasFieldMarshal), Object&(In, Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    OnClientDNSNameResolved(String(In, HasFieldMarshal), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Struct WMEncoderLib.WMENC_DEVICECONTROL_STATE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_DEVICECONTROL_STATE WMENC_DEVICECONTROL_PLAYING = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_DEVICECONTROL_STATE WMENC_DEVICECONTROL_PAUSED = 2 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_DEVICECONTROL_STATE WMENC_DEVICECONTROL_STOPPED = 3 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_DEVICECONTROL_STATE WMENC_DEVICECONTROL_FASTFORWARDING = 4 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_DEVICECONTROL_STATE WMENC_DEVICECONTROL_REWINDING = 5 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_DEVICECONTROL_STATE WMENC_DEVICECONTROL_CUEING = 6 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_DEVICECONTROL_STATE WMENC_DEVICECONTROL_PREROLLING = 7 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_DEVICECONTROL_STATE WMENC_DEVICECONTROL_UNSTABLE = 9 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_DEVICECONTROL_STATE WMENC_DEVICECONTROL_EJECT = 10 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_DEVICECONTROL_STATE WMENC_DEVICECONTROL_VAR_FORWARD = 11 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_DEVICECONTROL_STATE WMENC_DEVICECONTROL_VAR_REVERSE = 12 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_DEVICECONTROL_STATE WMENC_DEVICECONTROL_ENDOFTAPE = 13 : Public, Static, Literal, HasDefault
+Interface WMEncoderLib._IWMEncBasicEditEvents: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Methods:
+    OnStateChange(WMENC_BASICEDIT_STATE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    OnError(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Struct WMEncoderLib.WMENC_BASICEDIT_STATE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_BASICEDIT_STATE WMENC_BASICEDIT_RUNNING = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_BASICEDIT_STATE WMENC_BASICEDIT_STOPPED = 2 : Public, Static, Literal, HasDefault
+Interface WMEncoderLib._IWMEncoderAppEvents: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Class WMEncoderLib.WMEncoderClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.IWMEncoder2
+    WMEncoderLib.IWMEncoder
+    WMEncoderLib.WMEncoder
+    WMEncoderLib._IWMEncoderEvents_Event
+  Properties:
+    Boolean AutoStop 'get set' : 
+    Boolean EnableAutoArchive 'get set' : 
+    Int32 RecordingLevel [Int16] 'get set' : 
+    Boolean RecordingMute [Int16] 'get set' : 
+    WMEncoderLib.IWMEncSourceGroupCollection SourceGroupCollection 'get ' : 
+    WMEncoderLib.IWMEncSourcePluginInfoManager SourcePluginInfoManager 'get ' : 
+    WMEncoderLib.IWMEncTransformPluginInfoManager TransformPluginInfoManager 'get ' : 
+    WMEncoderLib.IWMEncDisplayInfo DisplayInfo 'get ' : 
+    WMEncoderLib.IWMEncAttributes Attributes 'get ' : 
+    WMEncoderLib.IWMEncBroadcast Broadcast 'get ' : 
+    WMEncoderLib.IWMEncFile File 'get ' : 
+    WMEncoderLib.IWMEncStatistics Statistics 'get ' : 
+    WMEncoderLib.IWMEncProfileCollection ProfileCollection 'get ' : 
+    WMEncoderLib.WMENC_ENCODER_STATE RunState 'get ' : 
+    Int32 ErrorState 'get ' : 
+    WMEncoderLib.WMENC_ARCHIVE_STATE ArchiveState [WMEncoderLib.WMENC_ARCHIVE_TYPE] 'get ' : 
+    System.String Name 'get set' : 
+    Boolean RemoteAdmin 'get set' : 
+    WMEncoderLib.WMENC_INDEXER_STATE IndexerState 'get ' : 
+    Boolean AutoIndex 'get set' : 
+    WMEncoderLib.IWMEncDeviceControlPluginInfoManager DeviceControlPluginInfoManager 'get ' : 
+    WMEncoderLib.IWMEncContentAnalyzer ContentAnalyzer 'get ' : 
+    Boolean SynchronizeOperation 'get set' : 
+    WMEncoderLib.IWMDRMContentAuthor EncoderDRMContentAuthor 'get ' : 
+    WMEncoderLib.IWMEncWatermarkCollection WatermarkCollection [WMEncoderLib.WMENC_SOURCE_TYPE] 'get ' : 
+    Boolean EnableTimecode 'get set' : 
+    Boolean PreserveSourceTimecode 'get set' : 
+    Int32 StartingTimecode 'get set' : 
+    Int32 TimecodeFrameRate 'get set' : 
+    WMEncoderLib.WMENC_VIDEOCOMPLEXITY VideoComplexity 'get set' : 
+  Events:
+    WMEncoderLib._IWMEncoderEvents_OnStateChangeEventHandler OnStateChange: 
+    WMEncoderLib._IWMEncoderEvents_OnErrorEventHandler OnError: 
+    WMEncoderLib._IWMEncoderEvents_OnArchiveStateChangeEventHandler OnArchiveStateChange: 
+    WMEncoderLib._IWMEncoderEvents_OnConfigChangeEventHandler OnConfigChange: 
+    WMEncoderLib._IWMEncoderEvents_OnClientConnectEventHandler OnClientConnect: 
+    WMEncoderLib._IWMEncoderEvents_OnClientDisconnectEventHandler OnClientDisconnect: 
+    WMEncoderLib._IWMEncoderEvents_OnSourceStateChangeEventHandler OnSourceStateChange: 
+    WMEncoderLib._IWMEncoderEvents_OnDeviceControlStateChangeEventHandler OnDeviceControlStateChange: 
+    WMEncoderLib._IWMEncoderEvents_OnIndexerStateChangeEventHandler OnIndexerStateChange: 
+    WMEncoderLib._IWMEncoderEvents_OnAcquireCredentialsEventHandler OnAcquireCredentials: 
+    WMEncoderLib._IWMEncoderEvents_OnClientDNSNameResolvedEventHandler OnClientDNSNameResolved: 
+  Methods:
+    remove_OnDeviceControlStateChange(_IWMEncoderEvents_OnDeviceControlStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_OnIndexerStateChange(_IWMEncoderEvents_OnIndexerStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_OnIndexerStateChange(_IWMEncoderEvents_OnIndexerStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_OnAcquireCredentials(_IWMEncoderEvents_OnAcquireCredentialsEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_OnAcquireCredentials(_IWMEncoderEvents_OnAcquireCredentialsEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_OnClientDNSNameResolved(_IWMEncoderEvents_OnClientDNSNameResolvedEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_OnClientDNSNameResolved(_IWMEncoderEvents_OnClientDNSNameResolvedEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_EnableTimecode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_EnableTimecode(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_PreserveSourceTimecode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_PreserveSourceTimecode(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_StartingTimecode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_StartingTimecode(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_TimecodeFrameRate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_TimecodeFrameRate(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_VideoComplexity(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_VideoComplexity(WMENC_VIDEOCOMPLEXITY(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_OnStateChange(_IWMEncoderEvents_OnStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_OnStateChange(_IWMEncoderEvents_OnStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_OnError(_IWMEncoderEvents_OnErrorEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_OnError(_IWMEncoderEvents_OnErrorEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_OnArchiveStateChange(_IWMEncoderEvents_OnArchiveStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_OnArchiveStateChange(_IWMEncoderEvents_OnArchiveStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_OnConfigChange(_IWMEncoderEvents_OnConfigChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_OnConfigChange(_IWMEncoderEvents_OnConfigChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_OnClientConnect(_IWMEncoderEvents_OnClientConnectEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_OnClientConnect(_IWMEncoderEvents_OnClientConnectEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_OnClientDisconnect(_IWMEncoderEvents_OnClientDisconnectEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_OnClientDisconnect(_IWMEncoderEvents_OnClientDisconnectEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_OnSourceStateChange(_IWMEncoderEvents_OnSourceStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_OnSourceStateChange(_IWMEncoderEvents_OnSourceStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_OnDeviceControlStateChange(_IWMEncoderEvents_OnDeviceControlStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_File(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Statistics(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ProfileCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_RunState(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ErrorState(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ArchiveState(WMENC_ARCHIVE_TYPE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Name(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Name(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_RemoteAdmin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_RemoteAdmin(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    GenerateBroadcastInfo(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_IndexerState(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_AutoIndex(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_AutoIndex(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    Indexer(WMENC_INDEXER_OPERATION(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_DeviceControlPluginInfoManager(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ContentAnalyzer(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    InsertCleanpoint(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_SynchronizeOperation(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_SynchronizeOperation(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_EncoderDRMContentAuthor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_WatermarkCollection(WMENC_SOURCE_TYPE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    GetWatermark(WMENC_SOURCE_TYPE(In), Int16(In), Object&(Out, HasFieldMarshal), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SetWatermark(WMENC_SOURCE_TYPE(In), Int16(In), String(In, HasFieldMarshal), String(In, HasFieldMarshal), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Flush(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SetLocaleID(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Load(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Save(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Start(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Stop(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_AutoStop(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_AutoStop(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    Pause(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    PrepareToEncode(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Reset(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Archive(WMENC_ARCHIVE_TYPE(In), WMENC_ARCHIVE_OPERATION(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SendScript(Int16(In), String(In, HasFieldMarshal), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_EnableAutoArchive(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_EnableAutoArchive(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_RecordingLevel(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_RecordingLevel(Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_RecordingMute(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_RecordingMute(Int16(In), Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    GetAudioLevel(WMENC_AUDIOLEVEL_UNITS(In), Int16(In), Int32&(In, Out), Double&(Out), Double&(Out), Double&(Out), Double&(Out), Double&(Out), Double&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_SourceGroupCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_SourcePluginInfoManager(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_TransformPluginInfoManager(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DisplayInfo(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Attributes(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Broadcast(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Interface WMEncoderLib._IWMEncoderEvents_Event: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Events:
+    WMEncoderLib._IWMEncoderEvents_OnStateChangeEventHandler OnStateChange: 
+    WMEncoderLib._IWMEncoderEvents_OnErrorEventHandler OnError: 
+    WMEncoderLib._IWMEncoderEvents_OnArchiveStateChangeEventHandler OnArchiveStateChange: 
+    WMEncoderLib._IWMEncoderEvents_OnConfigChangeEventHandler OnConfigChange: 
+    WMEncoderLib._IWMEncoderEvents_OnClientConnectEventHandler OnClientConnect: 
+    WMEncoderLib._IWMEncoderEvents_OnClientDisconnectEventHandler OnClientDisconnect: 
+    WMEncoderLib._IWMEncoderEvents_OnSourceStateChangeEventHandler OnSourceStateChange: 
+    WMEncoderLib._IWMEncoderEvents_OnDeviceControlStateChangeEventHandler OnDeviceControlStateChange: 
+    WMEncoderLib._IWMEncoderEvents_OnIndexerStateChangeEventHandler OnIndexerStateChange: 
+    WMEncoderLib._IWMEncoderEvents_OnAcquireCredentialsEventHandler OnAcquireCredentials: 
+    WMEncoderLib._IWMEncoderEvents_OnClientDNSNameResolvedEventHandler OnClientDNSNameResolved: 
+  Methods:
+    add_OnStateChange(_IWMEncoderEvents_OnStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_OnStateChange(_IWMEncoderEvents_OnStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_OnError(_IWMEncoderEvents_OnErrorEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_OnError(_IWMEncoderEvents_OnErrorEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_OnArchiveStateChange(_IWMEncoderEvents_OnArchiveStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_OnArchiveStateChange(_IWMEncoderEvents_OnArchiveStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_OnConfigChange(_IWMEncoderEvents_OnConfigChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_OnConfigChange(_IWMEncoderEvents_OnConfigChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_OnClientConnect(_IWMEncoderEvents_OnClientConnectEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_OnClientConnect(_IWMEncoderEvents_OnClientConnectEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_OnClientDisconnect(_IWMEncoderEvents_OnClientDisconnectEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_OnClientDisconnect(_IWMEncoderEvents_OnClientDisconnectEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_OnSourceStateChange(_IWMEncoderEvents_OnSourceStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_OnSourceStateChange(_IWMEncoderEvents_OnSourceStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_OnDeviceControlStateChange(_IWMEncoderEvents_OnDeviceControlStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_OnDeviceControlStateChange(_IWMEncoderEvents_OnDeviceControlStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_OnIndexerStateChange(_IWMEncoderEvents_OnIndexerStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_OnIndexerStateChange(_IWMEncoderEvents_OnIndexerStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_OnAcquireCredentials(_IWMEncoderEvents_OnAcquireCredentialsEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_OnAcquireCredentials(_IWMEncoderEvents_OnAcquireCredentialsEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_OnClientDNSNameResolved(_IWMEncoderEvents_OnClientDNSNameResolvedEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_OnClientDNSNameResolved(_IWMEncoderEvents_OnClientDNSNameResolvedEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class WMEncoderLib._IWMEncoderEvents_OnStateChangeEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(WMENC_ENCODER_STATE(In)): PrivateScope, Public, Virtual
+Class WMEncoderLib._IWMEncoderEvents_OnErrorEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Int32(In)): PrivateScope, Public, Virtual
+Class WMEncoderLib._IWMEncoderEvents_OnArchiveStateChangeEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(WMENC_ARCHIVE_TYPE(In), WMENC_ARCHIVE_STATE(In)): PrivateScope, Public, Virtual
+Class WMEncoderLib._IWMEncoderEvents_OnConfigChangeEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Int32(In), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual
+Class WMEncoderLib._IWMEncoderEvents_OnClientConnectEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(WMENC_BROADCAST_PROTOCOL(In), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual
+Class WMEncoderLib._IWMEncoderEvents_OnClientDisconnectEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(WMENC_BROADCAST_PROTOCOL(In), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual
+Class WMEncoderLib._IWMEncoderEvents_OnSourceStateChangeEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(WMENC_SOURCE_STATE(In), WMENC_SOURCE_TYPE(In), Int16(In), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual
+Class WMEncoderLib._IWMEncoderEvents_OnDeviceControlStateChangeEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(WMENC_DEVICECONTROL_STATE(In), String(In, HasFieldMarshal), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual
+Class WMEncoderLib._IWMEncoderEvents_OnIndexerStateChangeEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(WMENC_INDEXER_STATE(In), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual
+Class WMEncoderLib._IWMEncoderEvents_OnAcquireCredentialsEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(String(In, HasFieldMarshal), String(In, HasFieldMarshal), Object&(In, Out, HasFieldMarshal), Object&(In, Out, HasFieldMarshal), Object&(In, Out, HasFieldMarshal)): PrivateScope, Public, Virtual
+Class WMEncoderLib._IWMEncoderEvents_OnClientDNSNameResolvedEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(String(In, HasFieldMarshal), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual
+Interface WMEncoderLib.WMEncoder: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncoder2
+    WMEncoderLib.IWMEncoder
+    WMEncoderLib._IWMEncoderEvents_Event
+Class WMEncoderLib.WMEncoderAppClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.IWMEncoderApp
+    WMEncoderLib.WMEncoderApp
+    WMEncoderLib._IWMEncoderAppEvents_Event
+  Properties:
+    WMEncoderLib.IWMEncoder Encoder 'get ' : 
+    Boolean Visible 'get set' : 
+    Int32 Top  'get set' : 
+    Int32 Left 'get set' : 
+    Int32 Width 'get set' : 
+    Int32 Height 'get set' : 
+    Boolean UILock 'get set' : 
+    Int32 DisplayWidth [Int16] 'get ' : 
+    Int32 DisplayHeight [Int16] 'get ' : 
+  Methods:
+    get_Encoder(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Visible(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Visible(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Top(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Top(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Left(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Left(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Width(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Width(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Height(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Height(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_UILock(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_UILock(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DisplayWidth(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DisplayHeight(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    GetProperty(WMENCAPP_PROP_CLASS(In), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SetProperty(WMENCAPP_PROP_CLASS(In), String(In, HasFieldMarshal), Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SaveProperties(WMENCAPP_PROP_CLASS(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Interface WMEncoderLib._IWMEncoderAppEvents_Event: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+Interface WMEncoderLib.WMEncoderApp: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncoderApp
+    WMEncoderLib._IWMEncoderAppEvents_Event
+Interface WMEncoderLib.IWMEncoderApp: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    WMEncoderLib.IWMEncoder Encoder 'get ' : 
+    Boolean Visible 'get set' : 
+    Int32 Top  'get set' : 
+    Int32 Left 'get set' : 
+    Int32 Width 'get set' : 
+    Int32 Height 'get set' : 
+    Boolean UILock 'get set' : 
+    Int32 DisplayWidth [Int16] 'get ' : 
+    Int32 DisplayHeight [Int16] 'get ' : 
+  Methods:
+    get_Encoder(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Visible(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Visible(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Top(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Top(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Left(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Left(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Width(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Width(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Height(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Height(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_UILock(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_UILock(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_DisplayWidth(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_DisplayHeight(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetProperty(WMENCAPP_PROP_CLASS(In), String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SetProperty(WMENCAPP_PROP_CLASS(In), String(In, HasFieldMarshal), Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SaveProperties(WMENCAPP_PROP_CLASS(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Struct WMEncoderLib.WMENCAPP_PROP_CLASS: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENCAPP_PROP_CLASS WMENCAPP_PROP_USER = 1 : Public, Static, Literal, HasDefault
+Class WMEncoderLib.WMEncSourcesPageClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.WMEncSourcesPage
+Interface WMEncoderLib.WMEncSourcesPage: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Class WMEncoderLib.WMEncSourcesAltPageClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.WMEncSourcesAltPage
+Interface WMEncoderLib.WMEncSourcesAltPage: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Class WMEncoderLib.WMEncDisplayInfoPageClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.WMEncDisplayInfoPage
+Interface WMEncoderLib.WMEncDisplayInfoPage: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Class WMEncoderLib.WMEncAttributesPageClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.WMEncAttributesPage
+Interface WMEncoderLib.WMEncAttributesPage: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Class WMEncoderLib.WMEncProfilePageClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.WMEncProfilePage
+Interface WMEncoderLib.WMEncProfilePage: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Class WMEncoderLib.WMEncOutputPageClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.WMEncOutputPage
+Interface WMEncoderLib.WMEncOutputPage: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Class WMEncoderLib.WMEncAdvancedPageClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.WMEncAdvancedPage
+Interface WMEncoderLib.WMEncAdvancedPage: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Class WMEncoderLib.WMEncVideoSizePageClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.WMEncVideoSizePage
+Interface WMEncoderLib.WMEncVideoSizePage: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Class WMEncoderLib.WMEncProcessingPageClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.WMEncProcessingPage
+Interface WMEncoderLib.WMEncProcessingPage: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Class WMEncoderLib.WMEncPluginsPageClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.WMEncPluginsPage
+Interface WMEncoderLib.WMEncPluginsPage: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Class WMEncoderLib.WMEncDRMPageClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.WMEncDRMPage
+Interface WMEncoderLib.WMEncDRMPage: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Class WMEncoderLib.WMEncMonMainPageClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.WMEncMonMainPage
+Interface WMEncoderLib.WMEncMonMainPage: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Class WMEncoderLib.WMEncMonDisplayInfoPageClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.WMEncMonDisplayInfoPage
+Interface WMEncoderLib.WMEncMonDisplayInfoPage: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Class WMEncoderLib.WMEncMonConnectionsPageClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.WMEncMonConnectionsPage
+Interface WMEncoderLib.WMEncMonConnectionsPage: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Class WMEncoderLib.WMEncProfileManagerClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.IWMEncProfileManager
+    WMEncoderLib.WMEncProfileManager
+  Properties:
+    System.String ProfileDirectory 'get set' : 
+    System.String LastCreatedProfile 'get ' : 
+    System.String LastEditedProfile 'get ' : 
+  Methods:
+    WMEncProfileList(WMENC_MEDIA_FILTER(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    WMEncProfileListEx(WMENC_MEDIA_FILTER(In), WMENC_MEDIA_FILTER(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    WMEncProfileEdit(String(In, HasFieldMarshal), WMENC_MEDIA_FILTER(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetDetailsString(String(In, HasFieldMarshal), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_ProfileDirectory(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ProfileDirectory(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_LastCreatedProfile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_LastEditedProfile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Interface WMEncoderLib.WMEncProfileManager: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncProfileManager
+Interface WMEncoderLib.IWMEncProfileManager: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.String ProfileDirectory 'get set' : 
+    System.String LastCreatedProfile 'get ' : 
+    System.String LastEditedProfile 'get ' : 
+  Methods:
+    WMEncProfileList(WMENC_MEDIA_FILTER(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    WMEncProfileListEx(WMENC_MEDIA_FILTER(In), WMENC_MEDIA_FILTER(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    WMEncProfileEdit(String(In, HasFieldMarshal), WMENC_MEDIA_FILTER(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetDetailsString(String(In, HasFieldMarshal), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_ProfileDirectory(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_ProfileDirectory(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_LastCreatedProfile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_LastEditedProfile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Struct WMEncoderLib.WMENC_MEDIA_FILTER: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_MEDIA_FILTER WMENC_FILTER_NONE = 0 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_MEDIA_FILTER WMENC_FILTER_A = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_MEDIA_FILTER WMENC_FILTER_AV = 17 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_MEDIA_FILTER WMENC_FILTER_AS = 257 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_MEDIA_FILTER WMENC_FILTER_AVS = 273 : Public, Static, Literal, HasDefault
+Class WMEncoderLib.WMEncBasicEditClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.IWMEncBasicEdit
+    WMEncoderLib.WMEncBasicEdit
+    WMEncoderLib._IWMEncBasicEditEvents_Event
+  Properties:
+    System.String MediaFile 'get set' : 
+    System.String OutputFile 'get set' : 
+    System.String ConfigFile 'get set' : 
+    System.Decimal MarkIn 'get set' : 
+    System.Decimal MarkOut 'get set' : 
+    Boolean Index 'get set' : 
+    WMEncoderLib.WMEncProfile2 Profile 'get ' : 
+    WMEncoderLib.WMENC_BASICEDIT_STATE RunState 'get ' : 
+    System.Decimal Duration 'get ' : 
+    Int32 ErrorState 'get ' : 
+    Int32 ProgressPercent 'get ' : 
+  Events:
+    WMEncoderLib._IWMEncBasicEditEvents_OnStateChangeEventHandler OnStateChange: 
+    WMEncoderLib._IWMEncBasicEditEvents_OnErrorEventHandler OnError: 
+  Methods:
+    get_MediaFile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MediaFile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_OutputFile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_OutputFile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ConfigFile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ConfigFile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MarkIn(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MarkIn(Decimal(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MarkOut(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MarkOut(Decimal(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Index(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Index(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    SaveConfigFile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SaveProfile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_Profile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    Start(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Stop(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_RunState(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Duration(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ErrorState(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ProgressPercent(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_OnStateChange(_IWMEncBasicEditEvents_OnStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_OnStateChange(_IWMEncBasicEditEvents_OnStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_OnError(_IWMEncBasicEditEvents_OnErrorEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_OnError(_IWMEncBasicEditEvents_OnErrorEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Interface WMEncoderLib._IWMEncBasicEditEvents_Event: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Events:
+    WMEncoderLib._IWMEncBasicEditEvents_OnStateChangeEventHandler OnStateChange: 
+    WMEncoderLib._IWMEncBasicEditEvents_OnErrorEventHandler OnError: 
+  Methods:
+    add_OnStateChange(_IWMEncBasicEditEvents_OnStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_OnStateChange(_IWMEncBasicEditEvents_OnStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_OnError(_IWMEncBasicEditEvents_OnErrorEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_OnError(_IWMEncBasicEditEvents_OnErrorEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class WMEncoderLib._IWMEncBasicEditEvents_OnStateChangeEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(WMENC_BASICEDIT_STATE(In)): PrivateScope, Public, Virtual
+Class WMEncoderLib._IWMEncBasicEditEvents_OnErrorEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Int32(In)): PrivateScope, Public, Virtual
+Interface WMEncoderLib.WMEncBasicEdit: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncBasicEdit
+    WMEncoderLib._IWMEncBasicEditEvents_Event
+Interface WMEncoderLib.IWMEncBasicEdit: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.String MediaFile 'get set' : 
+    System.String OutputFile 'get set' : 
+    System.String ConfigFile 'get set' : 
+    System.Decimal MarkIn 'get set' : 
+    System.Decimal MarkOut 'get set' : 
+    Boolean Index 'get set' : 
+    WMEncoderLib.WMEncProfile2 Profile 'get ' : 
+    WMEncoderLib.WMENC_BASICEDIT_STATE RunState 'get ' : 
+    System.Decimal Duration 'get ' : 
+    Int32 ErrorState 'get ' : 
+    Int32 ProgressPercent 'get ' : 
+  Methods:
+    get_MediaFile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_MediaFile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_OutputFile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_OutputFile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ConfigFile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_ConfigFile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MarkIn(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_MarkIn(Decimal(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MarkOut(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_MarkOut(Decimal(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Index(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Index(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    SaveConfigFile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SaveProfile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_Profile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Start(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Stop(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_RunState(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Duration(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ErrorState(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ProgressPercent(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface WMEncoderLib.IWMEncProfile2: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncProfile
+  Properties:
+    System.String Name 'get ' : 
+    System.String Description 'get ' : 
+    Int16 MediaCount [WMEncoderLib.WMENC_SOURCE_TYPE] 'get ' : 
+    Boolean MultipleBitrate 'get ' : 
+    System.Object AudienceCollection 'get ' : 
+    Int32 MaxPacketSize 'get set' : 
+    Int32 ContentType 'get set' : 
+    Int32 AudienceCount 'get ' : 
+    WMEncoderLib.IWMEncAudienceObj Audience [Int32] 'get ' : 
+    Boolean ValidateMode 'get set' : 
+    WMEncoderLib.WMENC_PROFILE_COMPATIBILITY CompatibilityMode 'get set' : 
+    WMEncoderLib.WMENC_PROFILE_VBR_MODE VBRMode [WMEncoderLib.WMENC_SOURCE_TYPE, Int16] 'get set' : 
+    System.String ProfileName 'get set' : 
+    System.String ProfileDescription 'get set' : 
+    Int32 AudioCodecCount 'get ' : 
+    Int32 AudioFormatCount [Int32] 'get ' : 
+    Int32 VideoCodecCount 'get ' : 
+    Int32 LanguageCount [WMEncoderLib.WMENC_SOURCE_TYPE, Int16] 'get ' : 
+    Int32 Language [WMEncoderLib.WMENC_SOURCE_TYPE, Int16, Int32] 'get ' : 
+    WMEncoderLib.WMENC_PROFILE_BROADCAST_MODE BroadcastMode 'get set' : 
+    Boolean InterlaceMode [Int16] 'get set' : 
+    Boolean NonSquarePixelMode [Int16] 'get set' : 
+    Boolean EnableTimecode [Int16] 'get set' : 
+    Int32 MinPacketSize 'get set' : 
+  Methods:
+    get_AudioCodecCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    EnumAudioCodec(Int32(In), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_AudioFormatCount(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    EnumAudioFormat(Int32(In), Int32(In), Object&(Out, HasFieldMarshal), Object&(Out, HasFieldMarshal), Object&(Out, HasFieldMarshal), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_VideoCodecCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    EnumVideoCodec(Int32(In), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetCodecIndexFromFourCC(WMENC_SOURCE_TYPE(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetCodecFourCCFromIndex(WMENC_SOURCE_TYPE(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_LanguageCount(WMENC_SOURCE_TYPE(In), Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Language(WMENC_SOURCE_TYPE(In), Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    AddLanguage(WMENC_SOURCE_TYPE(In), Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RemoveLanguage(WMENC_SOURCE_TYPE(In), Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_BroadcastMode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_BroadcastMode(WMENC_PROFILE_BROADCAST_MODE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    DetectCompatibility(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Merge(WMEncProfile2(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Compare(WMEncProfile2(In, HasFieldMarshal), Boolean&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_InterlaceMode(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_InterlaceMode(Int16(In), Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_NonSquarePixelMode(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_NonSquarePixelMode(Int16(In), Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_EnableTimecode(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_EnableTimecode(Int16(In), Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MinPacketSize(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_MinPacketSize(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Name(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Description(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MediaCount(WMENC_SOURCE_TYPE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MultipleBitrate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_AudienceCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MaxPacketSize(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_MaxPacketSize(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ContentType(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_ContentType(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    LoadFromIWMProfile(Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    LoadFromFile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    LoadFromMemory(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SaveToIWMProfile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SaveToFile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SaveToMemory(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Clone(WMEncProfile2(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Clear(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_AudienceCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Audience(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    AddAudience(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DeleteAudience(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_ValidateMode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_ValidateMode(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Validate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_CompatibilityMode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_CompatibilityMode(WMENC_PROFILE_COMPATIBILITY(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_VBRMode(WMENC_SOURCE_TYPE(In), Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_VBRMode(WMENC_SOURCE_TYPE(In), Int16(In), WMENC_PROFILE_VBR_MODE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_ProfileName(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ProfileName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_ProfileDescription(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ProfileDescription(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Struct WMEncoderLib.WMENC_PROFILE_COMPATIBILITY: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_PROFILE_COMPATIBILITY WMENC_ENCODER_V8 = 0 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PROFILE_COMPATIBILITY WMENC_ENCODER_V9 = 1 : Public, Static, Literal, HasDefault
+Struct WMEncoderLib.WMENC_PROFILE_VBR_MODE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_PROFILE_VBR_MODE WMENC_PVM_NONE = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PROFILE_VBR_MODE WMENC_PVM_PEAK = 2 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PROFILE_VBR_MODE WMENC_PVM_UNCONSTRAINED = 3 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PROFILE_VBR_MODE WMENC_PVM_BITRATE_BASED = 4 : Public, Static, Literal, HasDefault
+Struct WMEncoderLib.WMENC_PROFILE_BROADCAST_MODE: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    WMEncoderLib.WMENC_PROFILE_BROADCAST_MODE WMENC_PFM_CUSTOM = 1 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PROFILE_BROADCAST_MODE WMENC_PFM_NTSC = 2 : Public, Static, Literal, HasDefault
+    WMEncoderLib.WMENC_PROFILE_BROADCAST_MODE WMENC_PFM_PAL = 3 : Public, Static, Literal, HasDefault
+Class WMEncoderLib.WMEncStreamEditClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.IWMEncStreamEdit
+    WMEncoderLib.WMEncStreamEdit
+    WMEncoderLib._IWMEncBasicEditEvents_Event
+  Properties:
+    System.String OutputFile 'get set' : 
+    WMEncoderLib.WMEncProfile2 OutputProfile 'get ' : 
+    WMEncoderLib.WMENC_BASICEDIT_STATE RunState 'get ' : 
+    Int32 ProgressPercent 'get ' : 
+  Events:
+    WMEncoderLib._IWMEncBasicEditEvents_OnStateChangeEventHandler OnStateChange: 
+    WMEncoderLib._IWMEncBasicEditEvents_OnErrorEventHandler OnError: 
+  Methods:
+    get_OutputFile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_OutputFile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    AddStream(String(In, HasFieldMarshal), WMENC_SOURCE_TYPE(In), Int32(In), Int16(In), Int32(In), Int32(In), Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    RemoveAllStreams(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Validate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Start(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Stop(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_OutputProfile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_RunState(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    GetStream(WMENC_SOURCE_TYPE(In), Int32(In), Int16(In), Int32(In), Object&(Out, HasFieldMarshal), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_ProgressPercent(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_OnStateChange(_IWMEncBasicEditEvents_OnStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_OnStateChange(_IWMEncBasicEditEvents_OnStateChangeEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_OnError(_IWMEncBasicEditEvents_OnErrorEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_OnError(_IWMEncBasicEditEvents_OnErrorEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Interface WMEncoderLib.WMEncStreamEdit: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncStreamEdit
+    WMEncoderLib._IWMEncBasicEditEvents_Event
+Interface WMEncoderLib.IWMEncStreamEdit: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.String OutputFile 'get set' : 
+    WMEncoderLib.WMEncProfile2 OutputProfile 'get ' : 
+    WMEncoderLib.WMENC_BASICEDIT_STATE RunState 'get ' : 
+    Int32 ProgressPercent 'get ' : 
+  Methods:
+    get_OutputFile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_OutputFile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    AddStream(String(In, HasFieldMarshal), WMENC_SOURCE_TYPE(In), Int32(In), Int16(In), Int32(In), Int32(In), Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RemoveAllStreams(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Validate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Start(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Stop(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_OutputProfile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_RunState(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetStream(WMENC_SOURCE_TYPE(In), Int32(In), Int16(In), Int32(In), Object&(Out, HasFieldMarshal), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_ProgressPercent(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Class WMEncoderLib.WMEncProfile2Class: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    WMEncoderLib.IWMEncProfile2
+    WMEncoderLib.IWMEncProfile
+    WMEncoderLib.WMEncProfile2
+  Properties:
+    System.String Name 'get ' : 
+    System.String Description 'get ' : 
+    Int16 MediaCount [WMEncoderLib.WMENC_SOURCE_TYPE] 'get ' : 
+    Boolean MultipleBitrate 'get ' : 
+    System.Object AudienceCollection 'get ' : 
+    Int32 MaxPacketSize 'get set' : 
+    Int32 ContentType 'get set' : 
+    Int32 AudienceCount 'get ' : 
+    WMEncoderLib.IWMEncAudienceObj Audience [Int32] 'get ' : 
+    Boolean ValidateMode 'get set' : 
+    WMEncoderLib.WMENC_PROFILE_COMPATIBILITY CompatibilityMode 'get set' : 
+    WMEncoderLib.WMENC_PROFILE_VBR_MODE VBRMode [WMEncoderLib.WMENC_SOURCE_TYPE, Int16] 'get set' : 
+    System.String ProfileName 'get set' : 
+    System.String ProfileDescription 'get set' : 
+    Int32 AudioCodecCount 'get ' : 
+    Int32 AudioFormatCount [Int32] 'get ' : 
+    Int32 VideoCodecCount 'get ' : 
+    Int32 LanguageCount [WMEncoderLib.WMENC_SOURCE_TYPE, Int16] 'get ' : 
+    Int32 Language [WMEncoderLib.WMENC_SOURCE_TYPE, Int16, Int32] 'get ' : 
+    WMEncoderLib.WMENC_PROFILE_BROADCAST_MODE BroadcastMode 'get set' : 
+    Boolean InterlaceMode [Int16] 'get set' : 
+    Boolean NonSquarePixelMode [Int16] 'get set' : 
+    Boolean EnableTimecode [Int16] 'get set' : 
+    Int32 MinPacketSize 'get set' : 
+  Methods:
+    set_InterlaceMode(Int16(In), Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_NonSquarePixelMode(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_NonSquarePixelMode(Int16(In), Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_EnableTimecode(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_EnableTimecode(Int16(In), Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MinPacketSize(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MinPacketSize(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_CompatibilityMode(WMENC_PROFILE_COMPATIBILITY(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_VBRMode(WMENC_SOURCE_TYPE(In), Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_VBRMode(WMENC_SOURCE_TYPE(In), Int16(In), WMENC_PROFILE_VBR_MODE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ProfileName(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ProfileName(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ProfileDescription(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ProfileDescription(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_AudioCodecCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    EnumAudioCodec(Int32(In), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_AudioFormatCount(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    EnumAudioFormat(Int32(In), Int32(In), Object&(Out, HasFieldMarshal), Object&(Out, HasFieldMarshal), Object&(Out, HasFieldMarshal), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_VideoCodecCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    EnumVideoCodec(Int32(In), Object&(Out, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetCodecIndexFromFourCC(WMENC_SOURCE_TYPE(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetCodecFourCCFromIndex(WMENC_SOURCE_TYPE(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_LanguageCount(WMENC_SOURCE_TYPE(In), Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Language(WMENC_SOURCE_TYPE(In), Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    AddLanguage(WMENC_SOURCE_TYPE(In), Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    RemoveLanguage(WMENC_SOURCE_TYPE(In), Int16(In), Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_BroadcastMode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_BroadcastMode(WMENC_PROFILE_BROADCAST_MODE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    DetectCompatibility(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Merge(WMEncProfile2(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Compare(WMEncProfile2(In, HasFieldMarshal), Boolean&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_InterlaceMode(Int16(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Name(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Description(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MediaCount(WMENC_SOURCE_TYPE(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MultipleBitrate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_AudienceCollection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MaxPacketSize(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MaxPacketSize(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ContentType(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ContentType(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    LoadFromIWMProfile(Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    LoadFromFile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    LoadFromMemory(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SaveToIWMProfile(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SaveToFile(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SaveToMemory(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Clone(WMEncProfile2(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Clear(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_AudienceCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Audience(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    AddAudience(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DeleteAudience(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_ValidateMode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ValidateMode(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    Validate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_CompatibilityMode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Interface WMEncoderLib.WMEncProfile2: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    WMEncoderLib.IWMEncProfile2
+    WMEncoderLib.IWMEncProfile
+Class WMEncoderLib._IWMEncoderEvents_SinkHelper: AutoLayout, AnsiClass, Class, Public, Sealed
+  Interfaces:
+    WMEncoderLib._IWMEncoderEvents
+  Fields:
+    WMEncoderLib._IWMEncoderEvents_OnStateChangeEventHandler m_OnStateChangeDelegate : Public
+    WMEncoderLib._IWMEncoderEvents_OnErrorEventHandler m_OnErrorDelegate : Public
+    WMEncoderLib._IWMEncoderEvents_OnArchiveStateChangeEventHandler m_OnArchiveStateChangeDelegate : Public
+    WMEncoderLib._IWMEncoderEvents_OnConfigChangeEventHandler m_OnConfigChangeDelegate : Public
+    WMEncoderLib._IWMEncoderEvents_OnClientConnectEventHandler m_OnClientConnectDelegate : Public
+    WMEncoderLib._IWMEncoderEvents_OnClientDisconnectEventHandler m_OnClientDisconnectDelegate : Public
+    WMEncoderLib._IWMEncoderEvents_OnSourceStateChangeEventHandler m_OnSourceStateChangeDelegate : Public
+    WMEncoderLib._IWMEncoderEvents_OnDeviceControlStateChangeEventHandler m_OnDeviceControlStateChangeDelegate : Public
+    WMEncoderLib._IWMEncoderEvents_OnIndexerStateChangeEventHandler m_OnIndexerStateChangeDelegate : Public
+    WMEncoderLib._IWMEncoderEvents_OnAcquireCredentialsEventHandler m_OnAcquireCredentialsDelegate : Public
+    WMEncoderLib._IWMEncoderEvents_OnClientDNSNameResolvedEventHandler m_OnClientDNSNameResolvedDelegate : Public
+    Int32 m_dwCookie : Public
+  Methods:
+    OnStateChange(WMENC_ENCODER_STATE): PrivateScope, Public, Virtual
+    OnError(Int32): PrivateScope, Public, Virtual
+    OnArchiveStateChange(WMENC_ARCHIVE_TYPE, WMENC_ARCHIVE_STATE): PrivateScope, Public, Virtual
+    OnConfigChange(Int32, String): PrivateScope, Public, Virtual
+    OnClientConnect(WMENC_BROADCAST_PROTOCOL, String): PrivateScope, Public, Virtual
+    OnClientDisconnect(WMENC_BROADCAST_PROTOCOL, String): PrivateScope, Public, Virtual
+    OnSourceStateChange(WMENC_SOURCE_STATE, WMENC_SOURCE_TYPE, Int16, String): PrivateScope, Public, Virtual
+    OnDeviceControlStateChange(WMENC_DEVICECONTROL_STATE, String, String): PrivateScope, Public, Virtual
+    OnIndexerStateChange(WMENC_INDEXER_STATE, String): PrivateScope, Public, Virtual
+    OnAcquireCredentials(String, String, Object&, Object&, Object&): PrivateScope, Public, Virtual
+    OnClientDNSNameResolved(String, String): PrivateScope, Public, Virtual
+Class WMEncoderLib._IWMEncBasicEditEvents_SinkHelper: AutoLayout, AnsiClass, Class, Public, Sealed
+  Interfaces:
+    WMEncoderLib._IWMEncBasicEditEvents
+  Fields:
+    WMEncoderLib._IWMEncBasicEditEvents_OnStateChangeEventHandler m_OnStateChangeDelegate : Public
+    WMEncoderLib._IWMEncBasicEditEvents_OnErrorEventHandler m_OnErrorDelegate : Public
+    Int32 m_dwCookie : Public
+  Methods:
+    OnStateChange(WMENC_BASICEDIT_STATE): PrivateScope, Public, Virtual
+    OnError(Int32): PrivateScope, Public, Virtual
+Class WMEncoderLib._IWMEncoderAppEvents_SinkHelper: AutoLayout, AnsiClass, Class, Public, Sealed
+  Interfaces:
+    WMEncoderLib._IWMEncoderAppEvents
+  Fields:
+    Int32 m_dwCookie : Public
